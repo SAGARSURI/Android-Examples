@@ -1,4 +1,9 @@
 <resources>
     <string name="app_name">Android-Examples</string>
     <string name="full_screen_fragment">Welcome to Full Screen Fragment</string>
+    <string name="enter_your_text">Enter your text</string>
+    <string name="descrip">Enter Description to send to activity</string>
+    <string name="pass">Pass</string>
+    <string name="no_data">No Data</string>
+    <string name="show_dialog">Show Dialog</string>
 </resources>

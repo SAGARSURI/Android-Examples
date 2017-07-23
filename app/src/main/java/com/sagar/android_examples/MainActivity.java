@@ -18,7 +18,7 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 
 public class MainActivity extends AppCompatActivity {
-    String[] totalItems = {"Full Screen DialogFragment"};
+    String[] totalItems = {"Full Screen DialogFragment","Data Pass from Fragment to Activity"};
     List<String> itemList = new ArrayList<>(Arrays.asList(totalItems));
     @BindView(R.id.itemList)
     RecyclerView recyclerView;

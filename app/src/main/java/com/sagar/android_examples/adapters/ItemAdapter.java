@@ -1,6 +1,7 @@
 package com.sagar.android_examples.adapters;
 
 import android.content.Context;
+import android.content.Intent;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.RecyclerView;
@@ -11,6 +12,7 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.sagar.android_examples.R;
+import com.sagar.android_examples.fragment_to_activity_communication.ContainerActivity;
 import com.sagar.android_examples.full_screen_fragments.FullScreenFragment;
 
 import java.util.ArrayList;
@@ -67,10 +69,17 @@ public class ItemAdapter extends RecyclerView.Adapter<ItemAdapter.MyViewHolder> 
 
         @OnClick(R.id.itemName)
         void itemClick() {
-            FullScreenFragment screenFragment = new FullScreenFragment();
-            FragmentTransaction fullScreenTransaction = ((AppCompatActivity)context).getSupportFragmentManager().beginTransaction();
-            fullScreenTransaction.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN);
-            fullScreenTransaction.add(android.R.id.content, screenFragment).addToBackStack(null).commit();
+            switch (getAdapterPosition()) {
+                case 0:
+                    FullScreenFragment screenFragment = new FullScreenFragment();
+                    FragmentTransaction fullScreenTransaction = ((AppCompatActivity) context).getSupportFragmentManager().beginTransaction();
+                    fullScreenTransaction.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN);
+                    fullScreenTransaction.add(android.R.id.content, screenFragment).addToBackStack(null).commit();
+                    break;
+                case 1:
+                    Intent intent = new Intent(context, ContainerActivity.class);
+                    context.startActivity(intent);
+            }
         }
     }
 }
