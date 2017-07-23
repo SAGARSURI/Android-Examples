@@ -22,9 +22,6 @@ import com.sagar.android_examples.R;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
-/**
- * Created by sagarsuri on 23/07/17.
- */
 
 public class MyDialog extends DialogFragment {
     int width, height;
@@ -35,11 +32,12 @@ public class MyDialog extends DialogFragment {
     Button passBtn;
     private DataPassListener dataPassListener;
 
-    public MyDialog(){
+    public MyDialog() {
 
     }
-    public interface DataPassListener{
-         void onDataPassClickListener(Dialog dialog,String data);
+
+    interface DataPassListener {
+        void onDataPassClickListener(Dialog dialog, String data);
     }
 
     @SuppressLint("ValidFragment")
@@ -74,11 +72,11 @@ public class MyDialog extends DialogFragment {
             @Override
             public void onClick(View view) {
                 String data = editText.getText().toString();
-                if(data.isEmpty()){
+                if (data.isEmpty()) {
                     editText.setError("Enter some text");
-                }else{
-                    dataPassListener.onDataPassClickListener(getDialog(),editText.getText().toString());
-                    InputMethodManager imm = (InputMethodManager)getActivity().getSystemService(Context.INPUT_METHOD_SERVICE);
+                } else {
+                    dataPassListener.onDataPassClickListener(getDialog(), editText.getText().toString());
+                    InputMethodManager imm = (InputMethodManager) getActivity().getSystemService(Context.INPUT_METHOD_SERVICE);
                     imm.hideSoftInputFromWindow(view.getWindowToken(), 0);
                     dismiss();
                 }
@@ -89,6 +87,6 @@ public class MyDialog extends DialogFragment {
     @Override
     public void onResume() {
         super.onResume();
-        getDialog().getWindow().setLayout((6 * width) / 7, (2*height) / 5);
+        getDialog().getWindow().setLayout((6 * width) / 7, (2 * height) / 5);
     }
 }
