@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">Android-Examples</string>
+    <string name="full_screen_fragment">Welcome to Full Screen Fragment</string>
+</resources>
