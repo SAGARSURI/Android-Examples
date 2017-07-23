@@ -8,4 +8,4 @@ Topics:
 4) Passing Data from a Service to Activity using Broadcast Receiver
 5) Adding ViewPager like swipe to a Horizontal RecyclerView
 
-Many more on the way.. :-) 
+Many more on the way.. :wink:
